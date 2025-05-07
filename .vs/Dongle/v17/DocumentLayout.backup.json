@@ -1,0 +1,103 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Brian\\source\\repos\\Dongle\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7C40F79D-5863-40AB-8F70-29E91CCC447D}|Dongle\\Dongle.vcxproj|C:\\Users\\Brian\\source\\repos\\Dongle\\Dongle\\DongleWrapper.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7C40F79D-5863-40AB-8F70-29E91CCC447D}|Dongle\\Dongle.vcxproj|solutionrelative:Dongle\\DongleWrapper.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C40F79D-5863-40AB-8F70-29E91CCC447D}|Dongle\\Dongle.vcxproj|C:\\Users\\Brian\\source\\repos\\Dongle\\Dongle\\DongleWrapper.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7C40F79D-5863-40AB-8F70-29E91CCC447D}|Dongle\\Dongle.vcxproj|solutionrelative:Dongle\\DongleWrapper.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Thales\\Sentinel LDK\\API\\Licensing\\C\\x64\\hasp_api.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Thales\\Sentinel LDK\\API\\Admin\\C\\x64\\sntl_adminapi.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Thales\\Sentinel LDK\\API\\Licgen\\C\\x64\\sntl_licgen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "hasp_api.h",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Thales\\Sentinel LDK\\API\\Licensing\\C\\x64\\hasp_api.h",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files (x86)\\Thales\\Sentinel LDK\\API\\Licensing\\C\\x64\\hasp_api.h",
+              "ToolTip": "C:\\Program Files (x86)\\Thales\\Sentinel LDK\\API\\Licensing\\C\\x64\\hasp_api.h",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files (x86)\\Thales\\Sentinel LDK\\API\\Licensing\\C\\x64\\hasp_api.h",
+              "ViewState": "AgIAAHcHAAAAAAAAAAAgwH0HAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-04T06:52:45.472Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "sntl_adminapi.h",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Thales\\Sentinel LDK\\API\\Admin\\C\\x64\\sntl_adminapi.h",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files (x86)\\Thales\\Sentinel LDK\\API\\Admin\\C\\x64\\sntl_adminapi.h",
+              "ToolTip": "C:\\Program Files (x86)\\Thales\\Sentinel LDK\\API\\Admin\\C\\x64\\sntl_adminapi.h",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files (x86)\\Thales\\Sentinel LDK\\API\\Admin\\C\\x64\\sntl_adminapi.h",
+              "ViewState": "AgIAAJcBAAAAAAAAAAAgwKYBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-04T06:52:34.728Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "sntl_licgen.h",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Thales\\Sentinel LDK\\API\\Licgen\\C\\x64\\sntl_licgen.h",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files (x86)\\Thales\\Sentinel LDK\\API\\Licgen\\C\\x64\\sntl_licgen.h",
+              "ToolTip": "C:\\Program Files (x86)\\Thales\\Sentinel LDK\\API\\Licgen\\C\\x64\\sntl_licgen.h",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files (x86)\\Thales\\Sentinel LDK\\API\\Licgen\\C\\x64\\sntl_licgen.h",
+              "ViewState": "AgIAAMcCAAAAAAAAAAAiwNMCAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-04T06:52:32.041Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DongleWrapper.h",
+              "DocumentMoniker": "C:\\Users\\Brian\\source\\repos\\Dongle\\Dongle\\DongleWrapper.h",
+              "RelativeDocumentMoniker": "Dongle\\DongleWrapper.h",
+              "ToolTip": "C:\\Users\\Brian\\source\\repos\\Dongle\\Dongle\\DongleWrapper.h",
+              "RelativeToolTip": "Dongle\\DongleWrapper.h",
+              "ViewState": "AgIAACYAAAAAAAAAAADwv1IAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-04T06:36:46.988Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DongleWrapper.cpp",
+              "DocumentMoniker": "C:\\Users\\Brian\\source\\repos\\Dongle\\Dongle\\DongleWrapper.cpp",
+              "RelativeDocumentMoniker": "Dongle\\DongleWrapper.cpp",
+              "ToolTip": "C:\\Users\\Brian\\source\\repos\\Dongle\\Dongle\\DongleWrapper.cpp",
+              "RelativeToolTip": "Dongle\\DongleWrapper.cpp",
+              "ViewState": "AgIAANYBAAAAAAAAAAAIwOoBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-04T06:36:32.275Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
