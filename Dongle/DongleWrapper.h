@@ -1,27 +1,41 @@
+#ifndef DONGLEWRAPPER_H
+#define DONGLEWRAPPER_H
+
 #ifdef DONGLEWRAPPER_EXPORTS
 #define DONGLEWRAPPER_API __declspec(dllexport)
 #else
 #define DONGLEWRAPPER_API __declspec(dllimport)
 #endif
+
+#include <string>
+#include <vector>
 #include "sntl_adminapi.h"
 #include "sntl_licgen.h"
 #include "hasp_api.h"
-#include <string>
+
+struct DongleInfo {
+    bool isPresent;
+    std::string keyId;
+    std::vector<unsigned int> featureIds;
+    unsigned int memorySize;
+};
 
 enum class DongleError {
-    SUCCESS = 0,
+    SUCCESS,
     LOGIN_FAILED,
     LOGOUT_FAILED,
-    INVALID_SESSION,
-    INVALID_PARAMETER,
     OPERATION_FAILED,
     MEMORY_ERROR,
     TIME_ERROR,
     ENCRYPTION_ERROR,
-    DECRYPTION_ERROR,
+    DECRYPTION_FAILED,
     LICENSE_GENERATION_FAILED,
     ADMIN_OPERATION_FAILED,
-    DECRYPTION_FAILED
+    INVALID_SESSION,
+    INVALID_PARAMETER,
+    INVALID_VENDOR_CODE,
+    NO_DONGLE_DETECTED,
+    NOT_INITIALIZED
 };
 
 class DONGLEWRAPPER_API DongleWrapper {
@@ -29,9 +43,23 @@ public:
     DongleWrapper(const std::string& vendorCodeFilePath, const std::string& password);
     ~DongleWrapper();
 
+    DongleError Initialize();
+
+    std::string LoadAndDecryptVendorCode();
+
+    DongleError DetectDongle(DongleInfo& dongleInfo);
+
     bool IsValidSession(unsigned long sessionHandle);
 
-    // Licensing API Functions
+    unsigned long GetLastHaspStatus() const;
+    sntl_lg_status_t GetLastLicenseGenStatus() const;
+    sntl_admin_status_t GetLastAdminStatus() const;
+    std::string GetLastErrorMessage() const;
+    std::string GetHaspErrorMessage(unsigned long status) const;
+    std::string GetLicenseGenErrorMessage(sntl_lg_status_t status) const;
+    std::string GetAdminErrorMessage(sntl_admin_status_t status) const;
+
+    // Licensing API
     DongleError LoginToFeature(unsigned int featureId, unsigned long& sessionHandle);
     DongleError Logout(unsigned long sessionHandle);
     DongleError GetInfo(unsigned long sessionHandle, const char* scope, const char* format, char** info);
@@ -44,8 +72,6 @@ public:
     DongleError GetRealTimeClock(unsigned long sessionHandle, unsigned long& time);
     DongleError EncryptData(unsigned long sessionHandle, const unsigned char* data, unsigned int length, unsigned char* encryptedData);
     DongleError DecryptData(unsigned long sessionHandle, const unsigned char* encryptedData, unsigned int length, unsigned char* decryptedData);
-
-    // License Generation API Functions
     DongleError InitializeLicenseGeneration(unsigned long& lgHandle);
     DongleError CleanupLicenseGeneration(unsigned long& lgHandle);
     DongleError StartLicenseGeneration(unsigned long lgHandle, const char* keyId, const char* licenseDefinition);
@@ -54,30 +80,23 @@ public:
     DongleError DecodeCurrentState(unsigned long lgHandle, const char* currentState, char** stateData);
     DongleError SNTL_LG_CALLCONV GetLicenseGenerationInfo(unsigned long lgHandle, sntl_lg_info_type_t infoType, char** info);
 
-    // Admin API Functions
+    // Admin API
     DongleError SNTL_ADMIN_CALLCONV CreateAdminContext(sntl_admin_context_t** adminHandle);
     DongleError SNTL_ADMIN_CALLCONV DeleteAdminContext(sntl_admin_context_t* adminHandle);
     DongleError SNTL_ADMIN_CALLCONV GetAdminInfo(sntl_admin_context_t* adminHandle, const char* scope, char** info);
     DongleError SNTL_ADMIN_CALLCONV SetAdminConfig(sntl_admin_context_t* adminHandle, const char* configData);
 
-    // Error handling methods
-    unsigned long GetLastHaspStatus() const; // For HASP API status codes
-    sntl_lg_status_t GetLastLicenseGenStatus() const; // For License Generation API status codes
-    sntl_admin_status_t GetLastAdminStatus() const; // For Admin API status codes
-    std::string GetLastErrorMessage() const; // Get the human-readable error message
-
 private:
     std::string vendorCodeFilePath;
     std::string password;
-    std::string LoadAndDecryptVendorCode();
+    unsigned long lastHaspStatus;
+    sntl_lg_status_t lastLicenseGenStatus;
+    sntl_admin_status_t lastAdminStatus;
+    bool isVendorCodeValid;
+    std::vector<unsigned char> vendorCode;
+    bool isInitialized;
 
-    // Store the last status codes for each API
-    unsigned long lastHaspStatus; // For HASP API
-    sntl_lg_status_t lastLicenseGenStatus; // For License Generation API
-    sntl_admin_status_t lastAdminStatus; // For Admin API
-
-    // Helper method to map status codes to error messages
-    std::string GetHaspErrorMessage(unsigned long status) const;
-    std::string GetLicenseGenErrorMessage(sntl_lg_status_t status) const;
-    std::string GetAdminErrorMessage(sntl_admin_status_t status) const;
+    DongleError CheckInitializedAndVendorCode();
 };
+
+#endif
