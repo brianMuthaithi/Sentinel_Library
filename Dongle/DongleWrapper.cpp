@@ -7,6 +7,7 @@
 #include <cstring>
 #include <sstream>
 #include "DongleWrapper.h"
+#include <iostream>
 
 DongleWrapper::DongleWrapper(const std::string& vendorCodeFilePath, const std::string& password)
     : vendorCodeFilePath(vendorCodeFilePath), password(password),
@@ -27,6 +28,7 @@ DongleError DongleWrapper::Initialize() {
         std::string decryptedVendorCode = LoadAndDecryptVendorCode();
         if (decryptedVendorCode.empty() || decryptedVendorCode.length() < 10) {
             isVendorCodeValid = false;
+            std::cerr << "Invalid vendor code: length = " << decryptedVendorCode.length() << std::endl;
             return DongleError::INVALID_VENDOR_CODE;
         }
         vendorCode.resize(decryptedVendorCode.size());
@@ -41,6 +43,7 @@ DongleError DongleWrapper::Initialize() {
     catch (const std::exception&) {
         isVendorCodeValid = false;
         isInitialized = false;
+        std::cerr << "Initialize faileds " << std::endl;
         return DongleError::DECRYPTION_FAILED;
     }
 }
